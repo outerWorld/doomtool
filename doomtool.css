@@ -1,11 +1,19 @@
+#wrapper {
+	position: absolute;
+	left: 15%;
+	right: 15%;
+	height: 100%;
+	background-color: #666666;
+}
+
 #nav_first h5 {
     display: none;
 }
 #nav_first ul {
-    padding: 3px 0; 
+    padding: 0px 0; 
     margin-left: 0; 
-    border-bottom: 1px solid #778; 
-    font: bold 12px Verdana, sans-serif; 
+    border-bottom: 0px solid #778; 
+    font: bold 20px Verdana, sans-serif; 
 }
   
 #nav_first ul li {
@@ -17,7 +25,7 @@
 #nav_first ul li a {
     padding: 3px 0.5em; 
     margin-left: 3px; 
-    border: 1px solid #778;
+    border: 0px solid #778;
     border-bottom: none;
     background: #DDE;
     text-decoration: none;
@@ -33,11 +41,42 @@
   
 #nav_first ul li a:link:hover, #nav_first ul li a:visited:hover {
     color: #000;
-    background: #AAE;
+    background: transparent;
     border-color: #227;
 }
   
 #nav_first ul li a#current {
-    background: white; 
-    border-bottom: 1px solid white;
+    background: transparent; 
+    border-bottom: 0px solid white;
+}
+
+#my_intro p {
+	position: relative;
+	margin-top: 10px;
+	margin-left: 10px;
+}
+
+#my_infor {
+	position: relative;
+	width: 80%;
+	height: 160px;
+	margin-left: 20px;
+}
+
+#my_latest {
+	position: relative;
+	margin-left: 10px;
+	margin-top: 10px;
+}
+
+#my_latest p {
+}
+
+#footer {
+	position: absolute;
+	margin-top: 90%;
+	width: 100%;
+}
+#footer p {
+	text-align: center;
 }
