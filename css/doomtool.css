@@ -8,15 +8,19 @@
 	/* background-color: #666666; */
 }
 
-#logo {
-	background-image: url(/image/outerWorld_logo.img);
+#wrapper #logo {
+	position: absolute;
+	/* background-image: url(/image/outerWorld_logo.png); */
 	background-color: white;
+	margin-left:0;
+	width:100%;
+	height: 80px;
 }
 
 #nav_first {
 	position: relative;
 	border: 2px;
-	margin-left: 5px;
+	margin-left: 0;
 	margin-top: 80px;
 }
 
@@ -76,6 +80,45 @@
 	height: 160px;
 	margin-left: 20px;
 }
+
+#myname {
+	position: relative;
+	left:0;
+	width:120px;
+	height: 24px;
+}
+#mail {
+	position: relative;
+	left: 128px;
+	width: 320px;
+	height: 24px; 
+	top: -34px;
+	margin:0;
+}
+#qq {
+	position: relative;
+	left: 480px;
+	width: 240px;
+	height: 24px; 
+	top: -68px;
+	margin:0;
+}
+
+#work-location {
+	position: relative;
+	left:0;
+	width:240px;
+	height: 24px;
+	top: -72px;
+}
+#interest {
+	position: relative;
+	left:0;
+	width:240px;
+	height: 24px;
+	top: -72px;
+}
+
 
 #my_latest {
 	position: relative;
