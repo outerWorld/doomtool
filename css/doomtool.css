@@ -15,6 +15,7 @@
 	margin-left:0;
 	width:100%;
 	height: 80px;
+	margin-top:5px;
 }
 
 #nav_first {
@@ -75,10 +76,17 @@
 }
 
 #my_infor {
+	display: float;
 	position: relative;
 	width: 80%;
 	height: 160px;
 	margin-left: 20px;
+	top: 0;
+}
+#my_intro > p {
+	display: float;
+	position: relative;
+	margin-top: 100px;
 }
 
 #myname {
@@ -86,6 +94,7 @@
 	left:0;
 	width:120px;
 	height: 24px;
+	top: 0px;
 }
 #mail {
 	position: relative;
