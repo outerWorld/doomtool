@@ -5,15 +5,17 @@
 		<meta http-equiv="Content-Language" content="zh-cn"/>
 		<meta name="robots" content="all"/>
 		<title>outerWorld's world</title>
-		<link rel="stylesheet" type="text/css" href="/doomtool/css/doomtool.css" />
+		<link rel="stylesheet" type="text/css" href="/css/doomtool.css" />
 	</head>
 	<body>
-	<div id="wrapper">
+	<div id="main">
+	<div id="left"></div> <!-- css left -->
+	<div id="middle">
 		<div id="logo">
-			<img src="/doomtool/image/outerWorld_logo.png"/>
+			<!--img src="/doomtool/image/outerWorld_logo.png"/-->
+			<!--img src="/image/outerWorld_logo.v2.png"/-->
 		</div>
-		<div id="my_intro">
-			<p>基本信息</p>
+		<div id="substract">
 			<div id="my_infor">
 				<div id="myname"><p>名字：黄春平</p></div>
 				<div id="mail"><p>邮箱：chunping.huang.china@gmail.com</p></div>
@@ -24,14 +26,14 @@
 				<div><p>联系电话：134xxxxxxxx</p></div>
 			</div>
 		</div>
-		<div id="nav_first">
+		<div id="navigator">
 			<ul id="menu">
 			<li id="i"><a id="current" onClick="">个人资料（Details）</a></li>
 			<li id="s"><a onClick="">历程（Doings）</a></li>
 			<li id="l"><a onClick="">英文版（English Version）</a></li>
 			</ul>
 		</div>
-		<div id="my_latest">
+		<div id="content">
 			<p>近况</p>
 			<ul>
 				<li>学习django</li>
@@ -39,9 +41,11 @@
 				<li>看《Unix环境高级编程》</li>
 			<ul>
 		</div>
-		<div id="footer">
-			<p>Copyright outerWorld.github.com</p>
-		</div>
+	</div> <!-- css middle -->
+	<div id="right"> </div> <!-- css right -->
+	</div> <!-- css main -->
+	<div id="footer">
+		<p>Copyright outerWorld.github.com</p>
 	</div>
 	</body>
 </html>

@@ -1,47 +1,73 @@
-#wrapper {
+#main {
+	margin: 0;
+	background: #fff;
+}
+
+#left {
+	width:100px;
+	margin: 0;
+	padding: 0;
+	background: #cdcdcd;	
+}
+
+#right {
+	position: absolute;
+	left: 80%;
+	top: 0;
+	width: 120px;
+	margin: 0;
+	padding: 0;
+	background: #fff;
+}
+
+#middle {
 	position: absolute;
 	left: 15%;
 	right: 15%;
 	height: 100%;
 	top:0;
 	bottom:0;
-	/* background-color: #666666; */
+	background-color: #dadada;
 }
 
-#wrapper #logo {
-	position: absolute;
-	/* background-image: url(/image/outerWorld_logo.png); */
-	background-color: white;
-	margin-left:0;
-	width:100%;
-	height: 80px;
-	margin-top:5px;
+#logo {
+	float: top;
+	background: url(/image/outerWorld_logo.v2.png) no-repeat left top;
+	margin-left:2px;
+	margin-top:0;
+	width: 468px;
+	height: 60px;
 }
 
-#nav_first {
-	position: relative;
+#substract {
+	float: left;
+	margin: 0;
+}
+
+#navigator {
+	float: left;
 	border: 2px;
 	margin-left: 0;
 	margin-top: 80px;
 }
 
-#nav_first h5 {
+#navigator h5 {
     display: none;
 }
-#nav_first ul {
+#navigator ul {
     padding: 0 0; 
     margin-left: 0; 
     border-bottom: 0 solid; 
     font: bold 20px Verdana, sans-serif; 
 }
   
-#nav_first ul li {
+#navigator ul li {
     list-style: none;
     margin: 0; 
     display: inline; 
 }
   
-#nav_first ul li a {
+#navigator ul li a {
     padding: 3px 0.5em; 
     margin-left: 3px; 
     border: 0px solid;
@@ -50,29 +76,23 @@
     text-decoration: none;
 }
   
-#nav_first ul li a:link {
+#navigator ul li a:link {
     color: #448;
 }
   
-#nav_first ul li a:visited {
+#navigator ul li a:visited {
     color: #667;
 }
   
-#nav_first ul li a:link:hover, #nav_first ul li a:visited:hover {
+#navigator ul li a:link:hover, #nav_first ul li a:visited:hover {
     color: #000;
     background: transparent;
     border-color: #227;
 }
   
-#nav_first ul li a#current {
+#navigator ul li a#current {
     background: transparent; 
     border-bottom: 0px solid white;
-}
-
-#my_intro p {
-	position: relative;
-	margin-top: 10px;
-	margin-left: 10px;
 }
 
 #my_infor {
@@ -129,13 +149,13 @@
 }
 
 
-#my_latest {
+#content {
 	position: relative;
 	margin-left: 10px;
 	margin-top: 10px;
 }
 
-#my_latest p {
+#content p {
 }
 
 #footer {
