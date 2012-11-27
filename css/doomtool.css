@@ -32,8 +32,7 @@
 
 #logo {
 	float: top;
-	/* background: url(/doomtool/image/outerWorld_logo.v2.png) repeat-x left top; */
-	background: url(/image/outerWorld_logo.v2.png) repeat-x left top;
+	background: url(/doomtool/image/outerWorld_logo.v2.png) repeat-x left top;
 	margin-left:0;
 	margin-top:0;
 	/* width: 468px;*/
