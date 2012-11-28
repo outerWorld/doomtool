@@ -138,21 +138,33 @@
 	width: 98%;
 }
 
-#skills {
+#education, #skills,
+#experience, #latest {
+	margin-bottom: 20px;
 }
 
-#skills .sec_li,
-#experience.sec_li{
+#education ul, #skills ul,
+#experience ul, #latest ul {
+	list-style: none;	
+	margin: 2px;
+}
+
+.item_name {
+	height: 24px;
+	font: bold 16px Verdana, sans-serif;
+}
+
+#education .sec_li, #skills .sec_li,
+#experience .sec_li, #latest .sec_li{
 	margin-left: 24px;
 	margin-bottom: 10px;
 }
 
-#skills ul,
-#experience ul,
-#latest ul {
-	list-style: none;	
-	margin: 2px;
+#experience .trd_li{
+	margin-left: 42px;
+	margin-bottom: 10px;
 }
+
 
 #footer {
 	position: absolute;
