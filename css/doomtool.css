@@ -32,7 +32,7 @@
 
 #logo {
 	float: top;
-	background: url(/doomtool/image/outerWorld_logo.v2.png) repeat-x left top;
+	background: url(/doomtool/image/outerWorld_logo.v2.png) no-repeat left top;
 	margin-left:0;
 	margin-top:0;
 	/* width: 468px;*/
@@ -45,7 +45,9 @@
 	width: 100%;
 	height: 100px;
 	margin: 0;
-	background: #f9f999;
+	background: #272727;
+	border-bottom: solid 1px white;
+	color: white;
 	/*border: solid; */
 }
 
@@ -81,12 +83,11 @@
 
 #menu {
 	float: left;
-	border: 2px;
+	border-bottom: 1px solid white;
 	width: 100%;
-	margin-left: 0;
-	margin-top: 0;
-	height: 25px;
-	background: #f9f999;
+	margin: 0 0 0 0;
+	height: 28px;
+	background: #272727;
 }
 
 #menu ul {
@@ -116,25 +117,19 @@
 }
   
 #menu ul li a:link {
-    color: #448;
+    color: white;
 }
   
 #menu ul li a:visited {
-    color: #667;
+    color: red;
 }
   
-#menu ul li a:link:hover, #nav_first ul li a:visited:hover {
+#menu ul li a:link:hover, ul li a:visited:hover {
     color: #000;
     background: transparent;
-    border-color: #227;
+    border-color: blue;
 }
   
-#menu ul li a#current {
-    background: transparent; 
-    border-bottom: 0px solid white;
-}
-
-
 #content {
 	position: relative;
 	float: left;
@@ -143,13 +138,20 @@
 	width: 98%;
 }
 
-#content > p {
-	border: #777 bold;
-	height: 18px;
-	font: bold 20px;
-	text-decoration: underline;
-	background: transparent;
-	
+#skills {
+}
+
+#skills .sec_li,
+#experience.sec_li{
+	margin-left: 24px;
+	margin-bottom: 10px;
+}
+
+#skills ul,
+#experience ul,
+#latest ul {
+	list-style: none;	
+	margin: 2px;
 }
 
 #footer {
