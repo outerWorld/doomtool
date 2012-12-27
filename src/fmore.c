@@ -21,6 +21,9 @@ static int enlarge_buffer(buffer_p buf_obj, int size)
 	char * tmp_buf = NULL;
 
 	tmp_buf = buf_obj->buf;
+	if (size <= buf_obj->size) {
+		size = (size+1)*2;
+	}
 
 	buf_obj->buf = (char*)malloc(size);
 	if (!buf_obj->buf) {
@@ -31,6 +34,7 @@ static int enlarge_buffer(buffer_p buf_obj, int size)
 	if (buf_obj->len > 0) { memcpy(buf_obj->buf, tmp_buf, buf_obj->len); }
 
 	if (tmp_buf) { free(tmp_buf); }
+	buf_obj->size = size;
 	
 	return 0;
 }
