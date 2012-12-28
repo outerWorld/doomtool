@@ -90,6 +90,7 @@ int main(int argc, char *argv[])
 		if (crk_list.crackers[i].hack_times>=10 && crk_list.crackers[i].hack_total*1.0/crk_list.crackers[i].hack_times <= 30.0) {
 			//fprintf(stdout, "%s %d\n", crk_list.crackers[i].hack_ip, crk_list.crackers[i].hack_times);
 			fprintf(stdout, "%s\n", crk_list.crackers[i].hack_ip);
+			fflush(stdout);
 			if (i < crk_list.num-1) {
 				// cover this position by the last one.
 				memcpy(&crk_list.crackers[i], &crk_list.crackers[crk_list.num-1], sizeof(cracker_t));

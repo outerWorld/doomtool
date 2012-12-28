@@ -109,6 +109,7 @@ int main(int argc, char *argv[])
 		str2time(line, &log_time);
 		
 		fprintf(stdout, "%ld %s %s\n", log_time, user, ip);
+		fflush(stdout);
 	}
 
 	return 0;
