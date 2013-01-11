@@ -48,8 +48,13 @@ int main(int argc, char *argv[])
 		if (!find) {
 			snprintf(cmdline, LINE_SIZE-1, "sudo iptables -I INPUT -s %s -j DROP", drop_ip);
 			cmdfp = popen(cmdline, "r");
+			fprintf(stdout, "%s:\n", cmdline);
+			while (fgets(line, LINE_SIZE, cmdfp)) {
+				line[strlen(line)-1] = '\0';
+				fprintf(stdout, "\t%s\n", line);
+			}
+		
 			pclose(cmdfp);
-			fprintf(stdout, "%s\n", cmdline);
 			fflush(stdout);
 		} else {
 			//fprintf(stdout, "[%s] found \n", drop_ip, cmdline);
