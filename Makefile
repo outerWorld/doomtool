@@ -1,8 +1,8 @@
 CC=gcc
 INC=-I./include
-LIB=-L./lib -lf1goal
+LIB=-L./lib -lf1goal -lpthread
 CFLAG=-g -O2 -Werror
-TOOLS=fmore secure_log ssh_hack_defend get_addrinfo forbid_ip
+TOOLS=fmore secure_log ssh_hack_defend get_addrinfo forbid_ip GoU
 
 fmore:fmore.o
 	${CC} -o $@ $^ ${LIB}
@@ -15,6 +15,9 @@ test_addrinfo:get_addrinfo.o
 	${CC} -o $@ $^ ${LIB}
 
 forbid_ip:forbid_ip.o
+	${CC} -o $@ $^ ${LIB}
+
+GoU:gou.o
 	${CC} -o $@ $^ ${LIB}
 
 %.o:src/%.c
