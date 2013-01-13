@@ -53,6 +53,8 @@ static i32_t http_proc(context_t ctx, buffer_p p_rdbuf, buffer_p p_wrbuf, i32_t 
 	}
 	url_parser_show(&p_ctx->url_parser);
 #endif
+	// get resource data
+	// now, support static files.
 	// response
 	buffer_append_format(p_wrbuf, "%s", "HTTP/1.1 200 OK\r\n");
 	buffer_append_format(p_wrbuf, "%s", http_header_rsp);
