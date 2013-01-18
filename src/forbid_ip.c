@@ -28,7 +28,7 @@ int main(int argc, char *argv[])
 	while (fgets(drop_ip, 24, stdin)) {
 		drop_ip[strlen(drop_ip)-1] = '\0';
 		find = 0;
-		snprintf(cmdline, LINE_SIZE-1, "sudo iptables %s %s", "-L", "-n");
+		snprintf(cmdline, LINE_SIZE-1, "/sbin/iptables %s %s", "-L", "-n");
 		cmdfp = popen(cmdline, "r");
 		if (!cmdfp) {
 			fprintf(stderr, "popen %s failed [%d:%s]\n", cmdline, errno, strerror(errno));
@@ -46,7 +46,7 @@ int main(int argc, char *argv[])
 		pclose(cmdfp);
 		
 		if (!find) {
-			snprintf(cmdline, LINE_SIZE-1, "sudo iptables -I INPUT -s %s -j DROP", drop_ip);
+			snprintf(cmdline, LINE_SIZE-1, "/sbin/iptables -I INPUT -s %s -j DROP", drop_ip);
 			cmdfp = popen(cmdline, "r");
 			fprintf(stdout, "%s:\n", cmdline);
 			while (fgets(line, LINE_SIZE, cmdfp)) {
