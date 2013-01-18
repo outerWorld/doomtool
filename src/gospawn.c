@@ -37,11 +37,11 @@ static int read_rsp_settings(char *setting, regset_p p_rs)
 	}
 
 	for (i=0; i<item_num; i++) {
-		snprintf(item, ITEM_NAME_SIZE, "rule[%d]\n", i);
+		snprintf(item, ITEM_NAME_SIZE, "rule[%d]", i);
 		if (F1G_OK != smart_conf_get_str(&sc, "SPAWN", item, "*", buffer_data(&rule), buffer_size(&rule))) {
 			goto __load_exit;
 		}
-		snprintf(item, ITEM_NAME_SIZE, "value[%d]\n", i);
+		snprintf(item, ITEM_NAME_SIZE, "value[%d]", i);
 		if (F1G_OK != smart_conf_get_str(&sc, "SPAWN", item, "*", buffer_data(&rule_val), buffer_size(&rule_val))) {
 			goto __load_exit;
 		}
@@ -75,6 +75,7 @@ int main(int argc, char *argv[])
 	regset_t rs;
 	FILE * pfile = NULL;
 	char * setting_fpath;
+	i8_p p_data;
 
 	if (argc < 3) {
 		usage(argv[0]);
@@ -99,7 +100,18 @@ int main(int argc, char *argv[])
 	
 	pfile = popen(cmd_line, "r");
 	if (!pfile) return 1;
-	
+
+	while (fgets(line, LINE_SIZE, pfile)) {
+		line[strlen(line)-1] = '\0';
+		fprintf(stdout, "%s", line);
+		fflush(stdout);
+		if (F1G_OK == regset_match(&rs, line, &p_data)) {
+			fprintf(stdout, "matched [%s] value[%s]\n", line, p_data);
+			fflush(stdout);
+			fwrite(p_data, strlen(p_data), 1, pfile);
+			fwrite("\n", 1, 1, pfile);
+		}
+	}
 
 	pclose(pfile);
 	regset_destroy(&rs);

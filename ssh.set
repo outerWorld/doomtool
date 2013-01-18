@@ -1,0 +1,6 @@
+[SPAWN]
+item_num = 2
+rule[0] = input password:
+value[0] = test
+rule[1] = Connection refused
+value[1] = refused
