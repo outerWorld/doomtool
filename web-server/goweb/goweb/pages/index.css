@@ -1,22 +1,19 @@
-html {
+html, body {
+	height: 100%;
+}
+
+#container {
 	min-height: 100%;
-	background: transparent url(http://momentoapp.com/images/background.png) repeat center top;
-	font-family: Arial, Helvetica, Geneva, sans-serif;
-	color: #e2ded8;
-	text-shadow: #000 0 1px 0;
+	margin-bottom: -330px;
+	position: relative;
 }
 
-body {
+.clearfooter {
+	height: 330px;
+	clear: both;
 }
 
-div .container {
-}
-
-div #header {
-}
-
-div #mid {
-}
-
-div #footer {
+#footer {
+	height: 330px;
+	position: relative;
 }
