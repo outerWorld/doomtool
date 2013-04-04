@@ -11,10 +11,16 @@
 			<div id="nav">
 				<div id="nav_left">
 					<ul>
+				{% for subject in subjects %}
+					<li><a href="#{{ subject.ID }}">{{ subject.name }}</a><li>
+				{% endfor %}
+					
+						<!--
 						<li><a href="#network">网络技术</a></li>
 						<li><a href="#datamine">数据挖掘技术</a></li>
 						<li><a href="#softsafe">软件安全技术</a></li>
 						<li><a href="#datalg">数据结构及算法</a></li>
+						-->
 					</ul>
 				</div>
 				<div id="nav_right">
@@ -30,7 +36,21 @@
 		<div id="content">
 			<div id="main_content">
 				<div id="subject_list">
+				{% for subject_v in subjects %}
 					<div class="subject">
+						<div class="subject_name"><ul><li id="{{ subject_v.ID}} "> {{ subject_v.name }}</li></ul>
+						<div>
+				{% for item in subject_v.Items %}
+						<div class="subject_item">
+							<ul>
+								<li class=title"><a href="{{ item.url }}"> {{ item.title }} </a></li>
+								<li class="desc">{{ item.desc }}</li>
+							<ul>
+						</div>
+				{% endfor %}
+					</div>
+				{% endfor %}
+					<!--div class="subject">
 						<div class="subject_name"><ul><li id="network"> 网络技术</li></ul> </div>
 						<div class="subject_item">
 							<ul>
@@ -81,7 +101,7 @@
 					<div class="subject_name"><ul><li id="datalg">数据结构及算法</li></ul> </div>
 				</div>
 
-			</div>
+			</div-->
 			<div id="sub_content">
 			</div>
 		</div>

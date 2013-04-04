@@ -2,6 +2,7 @@ from django.conf.urls import patterns, include, url
 from goweb.view import html
 from goweb.view import css
 from goweb.view import images
+from goweb.view import home
 
 # Uncomment the next two lines to enable the admin:
 # from django.contrib import admin
@@ -10,7 +11,9 @@ from goweb.view import images
 urlpatterns = patterns(
 	'',
     # Examples:
-	(r'^$', html),
+	(r'^$', home),
+	(r'^/$', home),
+	(r'^/index.html$', home),
 	(r'.html', html),
 	(r'.css$', css),
 	(r'.png', images),
