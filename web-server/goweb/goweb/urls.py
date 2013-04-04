@@ -1,5 +1,5 @@
 from django.conf.urls import patterns, include, url
-from goweb.view import home
+from goweb.view import html
 from goweb.view import css
 from goweb.view import images
 
@@ -10,9 +10,10 @@ from goweb.view import images
 urlpatterns = patterns(
 	'',
     # Examples:
-	(r'^$', home),
+	(r'^$', html),
+	(r'.html', html),
 	(r'.css$', css),
-	(r'^/images', images),
+	(r'.png', images),
     # url(r'^$', 'goweb.views.home', name='home'),
     # url(r'^goweb/', include('goweb.foo.urls')),
 

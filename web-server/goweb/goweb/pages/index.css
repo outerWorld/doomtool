@@ -2,18 +2,173 @@ html, body {
 	height: 100%;
 }
 
-#container {
-	min-height: 100%;
-	margin-bottom: -330px;
-	position: relative;
+body {
+	padding: 0;
+	margin: 0;
 }
 
-.clearfooter {
-	height: 330px;
-	clear: both;
+#main {
+	margin: 0 auto;
+	width: 976px;
+	background-color: yellow;
+}
+
+#fixed_top, #logo, #fixed_top_sep, #nav {
+	width: 976px;
+}
+
+#fixed_top {
+	position: fixed;
+	height: 72px;
+	background-color: #CCFF99;
+}
+
+#fixed_top_sep {
+	height: 2px;
+	background-color: gray;
+	padding: 0 0 0 0;
+	margin: 0 0 0 0;
+}
+
+#logo {
+	padding: 0;
+	margin: 0;
+	height: 40px;
+	background-image: url(/images/logo.png)
+}
+
+#nav, #nav_left, #nav_right {
+	height: 30px;
+	padding: 0;
+}
+
+#nav_left {
+	float: left;
+}
+
+#nav_right  {
+	float: right;
+}
+
+#nav_left ul, #nav_right ul {
+	font: 18px verdana, arial, sans-serif; 
+	list-style: none;
+	padding: 4px 0 0 8px;
+	border: 0;
+	margin: 0 0 0 0;
+}
+
+#nav_right ul li {
+	font: 18px verdana, arial, sans-serif; 
+	list-style: none;
+	padding-right: 6px;
+	margin: 0;
+	border: 0;
+	float: right;
+}
+
+#nav_left ul li {
+	font: 18px verdana, arial, sans-serif; 
+	list-style: none;
+	padding-right: 6px;
+	margin: 0;
+	border: 0;
+	float: left;
+}
+
+
+#nav li a {  
+    display: block;  
+    /* 如果是中英文混排的文字，建议用固定宽度 width:150px; height:30px; line-height:30px; text-align:center; */  
+    padding: 8px 50px;  
+    background: #3A4953;  
+    color: #fff;  
+    text-decoration: none;  
+    border-right: 1px solid #000;  
+}  
+  
+#nav li a:hover {  
+    background: #146C9C;  
+    color: #fff;  
+    text-decoration: none;  
+    border-right: 1px solid #000;  
+}  
+  
+#nav li a.last {  
+    border-right: 0;
+}
+
+#content {
+	margin: 0;
+	padding-top: 72px;
+}
+
+#main_content {
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+}
+/*
+.subject, .subject ul, .subject ul li {
+	list-style: none;
+}
+*/
+
+.subject {
+	margin: 0 0 14px 0;
+	padding: 0;
+	border: 0;
+}
+
+.subject_name, .subject_item {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+.subject_name ul{
+	margin: 0;
+	padding: 0;
+	border: 0;
+	list-style: none;
+}
+
+.subject_name ul li {
+	list-style: none;
+	margin: 0 0 0 7px;
+	padding: 0;
+	border: 0;
+}
+
+.subject_item ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	height: 24px;
+}
+
+.title a {
+	display: block;
+}
+
+.subject_item ul li {
+	margin: 0 0 0 40px;
+	padding: 0;
+	border: 0;
+	list-style: none;
+	float: left;
+}
+
+.title {
+	font: 14px verdana, arial, sans-serif; 
+	width: 150px;
+}
+
+.desc {
+	font: 12px verdana, arial, sans-serif;
 }
 
 #footer {
-	height: 330px;
-	position: relative;
+	background-color: red;
+	text-align: center;
 }
