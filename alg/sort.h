@@ -14,17 +14,27 @@ enum {
 	SORT_QUICK,
 };
 
-typedef int (*cmp_func_p)(void *d1, void *d2);
-typedef int	(*swap_func_p)(void *d1, void *d2);
+enum {
+	INT_TYPE = 0x00,
+	CHAR_TYPE,
+	SELF_DEF_TYPE,
+};
+
+typedef int (*cmp_func_p)(char *d1, char *d2);
+typedef int	(*swap_func_p)(char *d1, char *d2);
+typedef int (*assign_func_p)(char *d1, char *d2);
 
 typedef struct _sort_data_s {
-	void 		*unsorted;
-	int			e_size;
-	int			e_num;
-	int			method;
-	cmp_func_p 	p_cmp;
-	swap_func_p p_swap;
+	char 			*unsorted;
+	int				e_size;
+	int				e_num;
+	int				method;
+	cmp_func_p 		p_cmp;
+	swap_func_p 	p_swap;
+	assign_func_p 	p_assign;
 }sort_data_t, *sort_data_p;
+
+int sort_data_init(sort_data_p p_data, int type);
 
 int sort(sort_data_p p_data);
 
