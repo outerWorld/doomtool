@@ -66,16 +66,76 @@ static int sort_ins(char *data, int size, int elem_size, cmp_func_p p_cmp, assig
 	return 0;
 }
 
+#define _SWAP(temp, d1, d2, assign) \
+assign(d1, temp); \
+assign(d2, d1); \
+assign(temp, d2);
+
+int sort_bubble(char *data, int size, int elem_size, cmp_func_p p_cmp, assign_func_p p_assign)
+{
+	int i, j;
+	char *temp = NULL;
+
+	_ALLOC(temp, char *, elem_size, -1);
+
+	for (i = 0; i < size; i++) {
+		for (j = 0; j < size - i - 1; j++) {
+			if (p_cmp(data + elem_size*j, data + elem_size*(j+1)) > 0) {
+				_SWAP(temp, data + elem_size*j, data + elem_size*(j+1), p_assign);
+			}
+		}
+	}
+
+	_FREE(temp);
+
+	return 0;
+}
+
+int sort_select(char *data, int size, int elem_size, cmp_func_p p_cmp, assign_func_p p_assign)
+{
+	int i, j, min;
+	char *temp = NULL;
+
+	_ALLOC(temp, char *, elem_size, -1);
+
+	for (i = 0; i < size; i++) {
+		min = i;
+		for (j = i+1; j < size; j++) {
+			if (p_cmp(data + elem_size*j, data + elem_size*min) < 0) {
+				min = j;
+			}
+		}
+
+		//if (min != i) _SWAP(temp, data + elem_size*min, data + elem_size*i, p_assign);
+		_SWAP(temp, data + elem_size*min, data + elem_size*i, p_assign);
+	}
+
+	_FREE(temp);
+
+	return 0;
+}
+
+int sort_quick(char *data, int size, int elem_size, cmp_func_p p_cmp, assign_func_p p_assign)
+{
+	return 0;
+}
+
 int sort(sort_data_p p_data)
 {
 
 	switch (p_data->method) {
 		case SORT_INSERTION:
 			return sort_ins(p_data->unsorted, p_data->e_num, p_data->e_size, p_data->p_cmp, p_data->p_assign);
+
 		case SORT_BUBBLE:
-			break;
+			return sort_bubble(p_data->unsorted, p_data->e_num, p_data->e_size, p_data->p_cmp, p_data->p_assign);
+
+		case SORT_SELECT:
+			return sort_select(p_data->unsorted, p_data->e_num, p_data->e_size, p_data->p_cmp, p_data->p_assign);
+
 		case SORT_QUICK:
-			break;
+			return sort_quick(p_data->unsorted, p_data->e_num, p_data->e_size, p_data->p_cmp, p_data->p_assign);
+
 		default:
 			return -1;
 	}

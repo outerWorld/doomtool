@@ -11,6 +11,7 @@
 enum {
 	SORT_INSERTION = 0x00, //
 	SORT_BUBBLE,
+	SORT_SELECT,
 	SORT_QUICK,
 };
 
